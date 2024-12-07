@@ -1,0 +1,114 @@
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --error-bg: hsl(0, 100%, 85%);
+    --url-color: hsl(256, 82%, 40%);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: hsl(300, 79%, 2.5%);
+        --text-color: #ffcfdf;
+        --error-bg: hsl(341, 90%, 6%);
+        --url-color: hsl(256, 82%, 80%);
+    }
+}
+
+body {
+    cursor: default;
+    margin: 0;
+    width: 100vw;
+    height: 100vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color .2s;
+}
+
+body.error {
+    background-color: var(--error-bg);
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.key_view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+}
+
+.letter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 10rem;
+    width: 10rem;
+    white-space: nowrap;
+}
+
+.key_view small.letter {
+    font-size: 6rem;
+    opacity: .5;
+    height: 6rem;
+    width: 6rem;
+}
+
+.key_view small.letter.long {
+    font-size: 3rem;
+    height: 3rem;
+    width: 14rem;
+    justify-content: start;
+    mask-image: linear-gradient(to right, var(--text-color), transparent);
+}
+
+.key_view small.letter.long.prevl {
+    justify-content: end;
+    mask-image: linear-gradient(to left, var(--text-color), transparent);
+}
+
+.key_view .currentl {
+    font-size: 10rem;
+    border: 1px solid var(--text-color);
+    border-radius: .3rem;
+}
+
+body.error .key_view .currentl {
+    animation: shake .3s;
+}
+
+@keyframes shake {
+    25% { transform: translateX(4px); }
+    50% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+    padding: 1.2rem;
+    opacity: .5;
+}
+
+footer a {
+    color: var(--url-color);
+    cursor: pointer;
+}
+
+input {
+    cursor: text;
+}
