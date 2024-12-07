@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイピングの先生</title>
+    <link rel="stylesheet" href="style/main.css">
+    <script src="app/main.js"></script>
+    <!-- Sounds -->
+    <audio src="assets/error.ogg" id="sound_error"></audio>
+    <audio src="assets/finish.ogg" id="sound_finish"></audio>
+</head>
+<body>
+    <div class="app">
+        <div class="info_bar">
+            <span id="text_progress">0 / 0</span>
+            &middot;
+            <span id="text_mistakes">0 Mistakes</span>
+        </div>
+        <div class="key_view">
+            <small class="letter prevl long" id="long_prev_text">QRSTUVWXYZ</small>
+            <small class="letter prevl" id="prev_letter">A</small>
+            <div class="letter currentl" id="current_letter">B</div>
+            <small class="letter nextl" id="next_letter">C</small>
+            <small class="letter nextl long" id="long_next_text">DEFGHIJKLM</small>
+        </div>
+        <div class="controls">
+            <input type="text" id="letter_input" inputmode="none" style="ime-mode: disabled;">
+        </div>
+    </div>
+    <footer>
+        <i>
+			Sentence by <span id="sentence_author"></span> from <a href="https://tatoeba.org/" target="_blank">tatoeba.org</a><br>
+			The sentences were automatically converted to hiragana by a program.<br>
+			They might use wrong readings.<br><br>
+			Sound Sources: modified version of an <a href="https://freesound.org/people/original_sound/sounds/366103/">error sound</a> by <a href="https://freesound.org/people/original_sound/">original_sound</a><br>
+			& this <a href="https://freesound.org/people/SilverIllusionist/sounds/667844/">confirm sound</a> by <a href="https://freesound.org/people/SilverIllusionist/">SilverIllusionist</a>
+		</i>
+    </footer>
+</body>
+</html>
